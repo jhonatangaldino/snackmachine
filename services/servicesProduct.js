@@ -27,6 +27,8 @@ const purchaseProduct = function(cardId, productName) {
   return card;
 }
 
+//console.log('getProductObject', getProductObject("toddy"));
+
 module.exports = {
   purchaseProduct,
   getProductObject

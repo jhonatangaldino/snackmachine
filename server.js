@@ -1,10 +1,15 @@
 const express = require('express');
-const app = express();
-const port = 3000;
-
+const bodyParser = require('body-parser');
 const serviceCard = require('./services/servicesCard');
 const serviceProduct = require('./services/servicesProduct');
 
+const app = express();
+const port = 3000;
+
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+
+//CARTÃO
 app.get('/valueCard/:cardId', function(request, response) {
   if (response.status(200)) {
     const cardId = request.params.cardId;
@@ -13,7 +18,6 @@ app.get('/valueCard/:cardId', function(request, response) {
     response.send("O valor é " + value);
   }
 });
-
 
 
 // PRODUTOS
@@ -28,12 +32,6 @@ app.post('/purchase', function(request, response) {
   //const value
 });
 
-/*app.get('/value/:cardId', function(request, response) {
-  const cardId = request.params.cardId;
-  const productName = request.params.productName
-  const value = serviceProduct.purchaseProduct(cardId, productName);
-  response.send(value);
-});*/
 
 
 //const listener = app.listen(process.env.PORT, function() {
