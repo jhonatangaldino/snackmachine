@@ -41,9 +41,16 @@ const returnCard = function(cardId) {
   return cards.filter(function(item) { return item.card == cardId })[0];
 }
 
+const debtCard = function(cardId, debtValue){
+  const card = returnCard(cardId);
+  console.log('salto anterior' , card.valueDay, 'debito', debtValue, 'saldo atual', card.valueDay - debtValue)
+  return card.valueDay = card.valueDay - debtValue;
+}
+
 module.exports = {
   isFirstUse,
   rechargeCardOnFirstUse,
   showAvailableValue,
-  returnCard
+  returnCard,
+  debtCard
 }
