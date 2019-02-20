@@ -18,10 +18,10 @@ const purchasesDay = function(cardId, date){
     })[0];
 }
 
-const rechargeCardOnFirstUse = function(cardId) {
+const rechargeCardOnFirstUse = function(cardId, value) {
     const card = returnCard(cardId);
     if (isFirstUse(cardId)) {
-      card.valueDay = 10;
+      card.valueDay = value;
       console.log("Recarga Efetuada!");
       return card;
     }else{
@@ -42,5 +42,8 @@ const returnCard = function(cardId) {
 }
 
 module.exports = {
-  showAvailableValue
+  isFirstUse,
+  rechargeCardOnFirstUse,
+  showAvailableValue,
+  returnCard
 }

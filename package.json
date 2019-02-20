@@ -1,0 +1,23 @@
+{
+  "name": "snackmachine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhonatangaldino/snackmachine.git"
+  },
+  "author": "Jhonatan Galdino <jhonatan_freitas_galdino@hotmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhonatangaldino/snackmachine/issues"
+  },
+  "homepage": "https://github.com/jhonatangaldino/snackmachine#readme",
+  "devDependencies": {
+    "express": "^4.16.4"
+  }
+}

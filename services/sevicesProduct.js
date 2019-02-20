@@ -28,5 +28,6 @@ const purchaseProduct = function(cardId, productName) {
 }
 
 module.exports = {
-  purchaseProduct
+  purchaseProduct,
+  getProductObject
 }
