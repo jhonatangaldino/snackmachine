@@ -3,10 +3,10 @@ const cards = require('./cards');
 
 const isFirstUse = function(cardId) {
   if(purchasesDay(cardId, new Date()) != undefined){
-    console.log("Não é o primeiro uso do dia.");
+    console.log("Não é o primeiro uso do dia no cartão [", cardId ,"].");
     return false;
   }else{
-    console.log("Primeiro uso do dia.");
+    console.log("Primeiro uso do dia no cartão [", cardId,"].");
     return true;
   }
 }
@@ -22,10 +22,10 @@ const rechargeCardOnFirstUse = function(cardId, value) {
     const card = returnCard(cardId);
     if (isFirstUse(cardId)) {
       card.valueDay = value;
-      console.log("Recarga Efetuada!");
+      console.log("Recarga no cartão [", cardId,"] de [", value ,"] foi efetuada!");
       return card;
     }else{
-      console.log("Não efetua recarga!");
+      console.log("Recarga de [", value ,"] no cartão [", cardId,"] não efetuada pois não é primeiro uso.");
     }
 };
 
@@ -33,7 +33,7 @@ const showAvailableValue = function(cardId) {
   var amount = 0;
   const card = returnCard(cardId);
   amount = card.valueDay;
-  console.log("O valor no cartão é:" , amount);
+  console.log("O valor no [", cardId,"] cartão é:" , amount);
   return amount;
 }
 

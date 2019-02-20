@@ -19,9 +19,9 @@ const purchaseProduct = function(cardId, productName) {
     purchase.purchaseDate = services.formatDate(new Date());
     card.purchases.push(purchase);
     card.valueDay = card.valueDay - product.price;
-    console.log("Compra realizada.");
+    console.log("Compra no cartão [", cardId ,"] de [", product.price ,"] realizada no dia [", purchase.purchaseDate,"] com sucesso.");
   }else{
-    console.log("Não possui saldo suficiente!");
+    console.log("O cartão [", cardId ,"] não possui saldo suficiente! Saldo Atual:[",card.valueDay,"]");
   }
   //retornar posteriormente (true | false)
   return card;
