@@ -5,7 +5,7 @@ const cards = require('./servicesCard');
 const getProductObject = function (productName) {
   return products.filter(
     function(item){
-      return item.name == productName
+      return item.name.toUpperCase() == productName.toUpperCase();
     })[0];
   // buscamos a posição 0 desse array filtrado. Posteriormente, quando isso for buscar do banco, removemos essa parte
 }

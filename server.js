@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 
 const serviceCard = require('./services/servicesCard');
-const serviceProduct = require('./services/sevicesProduct');
+const serviceProduct = require('./services/servicesProduct');
 
 app.get('/valueCard/:cardId', function(request, response) {
   if (response.status(200)) {
@@ -12,6 +12,15 @@ app.get('/valueCard/:cardId', function(request, response) {
     const value = serviceCard.showAvailableValue(cardId);
     response.send("O valor é " + value);
   }
+});
+
+
+
+// PRODUTOS
+app.get('/valueProduct/:productName', function(request, response){
+  const productName = request.parems.productName;
+  const value = serviceProduct.getProductObject(productName);
+  response.send("lala" + value);
 });
 
 app.post('/purchase', function(request, response) {
@@ -26,11 +35,6 @@ app.post('/purchase', function(request, response) {
   response.send(value);
 });*/
 
-app.get('/valueProduct/:productId', function(request, response){
-  const productId = request.parems.productId;
-  const value = serviceProduct.getProductObject(productId);
-  response.send(value)
-});
 
 //const listener = app.listen(process.env.PORT, function() {
 const listener = app.listen(port, function() {
