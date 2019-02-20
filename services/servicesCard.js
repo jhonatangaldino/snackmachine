@@ -3,7 +3,7 @@ const cards = require('./cards');
 
 const isFirstUse = function(cardId) {
   if(purchasesDay(cardId, new Date()) != undefined){
-    console.log("Não é o primeiro uso do dia no cartão [", cardId ,"].");
+    console.log("Não é o primeiro uso do dia [", formatDate(new Date()) ,"] no cartão [", cardId ,"].");
     return false;
   }else{
     console.log("Primeiro uso do dia no cartão [", cardId,"].");

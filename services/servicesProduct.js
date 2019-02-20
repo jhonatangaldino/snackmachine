@@ -7,7 +7,7 @@ const getProductObject = function (productName) {
     function(item){
       return item.name.toUpperCase() == productName.toUpperCase();
     })[0];
-  // buscamos a posição 0 desse array filtrado. Posteriormente, quando isso for buscar do banco, removemos essa parte
+  // buscamos a posição 0 desse array filtrado. Posteriormente, quando isso for buscar do banco, resolver essa parte
 }
 
 const purchaseProduct = function(cardId, productName) {
