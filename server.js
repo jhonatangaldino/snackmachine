@@ -1,31 +1,30 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const serviceCard = require('./services/servicesCard');
-const serviceProduct = require('./services/servicesProduct');
+const express         = require('express');
+const bodyParser      = require('body-parser');
+const serviceCard     = require('./services/servicesCard');
+const serviceProduct  = require('./services/servicesProduct');
 
 const app = express();
 const port = 3000;
 
-const valueDaily = 20;
+const valueDaily = 2.5;
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 //CARTÃO
-app.get('/valueCard/:cardId', function(request, response) {
+app.get('/cards/:cardId', function(request, response) {
     const cardId  = request.params.cardId;
     const card    = serviceCard.returnCard(cardId) ;
     if (card) {
       response.status(200).send({card});
     }else{
-      response.status(404).send({ error: "Dados não localizados." });
+      response.status(404).send({ error: "Dados de cartão não localizados." });
     }
 });
 
-
 // PRODUTOS
-app.get('/product', function(request, response){
-  const products = serviceProduct.listProduct();
+app.get('/products', function(request, response){
+  const products = serviceProduct.listProducts();
   if (products) {
     response.status(200).send({products});
   }else{
@@ -33,9 +32,9 @@ app.get('/product', function(request, response){
   }
 });
 
-app.get('/product/:productId', function(request, response){
-  const productId = request.params.productId;
-  const product     = serviceProduct.getProductObject(productId);
+app.get('/products/:name', function(request, response){
+  const name        = request.params.name;
+  const product     = serviceProduct.getProductObject(name);
   if (product) {
     response.status(200).send(product);
   }else{
@@ -43,33 +42,22 @@ app.get('/product/:productId', function(request, response){
   }
 });
 
-app.get('/productName/:productName', function(request, response){
-  const productName = request.params.productName;
-  const product     = serviceProduct.getProductObjectName(productName);
-  if (product) {
-    response.status(200).send(product);
-  }else{
-    response.status(404).send({ error: "Produto não localizado." });
-  }
-});
-
-
-// VENDA
-app.get('/purchase/productId:productId&cardId:cardId', function(request, response) {
-    const productId   = request.params.productId;
+app.post('/products/purchases/productName:productName&cardId:cardId', function(request, response) {
+    const productName = request.params.productName;
     const cardId      = request.params.cardId;
-    const product     = serviceProduct.getProductObject(productId);
+    const product     = serviceProduct.getProductObject(productName);
     const card        = serviceCard.returnCard(cardId);
-    serviceCard.rechargeCardOnFirstUse(cardId, valueDaily);
+    if (!card) {
+      response.status(404).send({ error: "Cartão não localizado." });
+    }else{
+      serviceCard.rechargeCardOnFirstUse(card.card, valueDaily);
+    }
     if (!product) {
       response.status(404).send({ error: "Produto não localizado." });
     }
-    if (!card) {
-      response.status(404).send({ error: "Cartão não localizado." });
-    }
     if (card.valueDay >= product.price) {
       if (product.productAmount > 0) {
-        const productCard = serviceProduct.purchaseProduct(card.card, product._id);
+        const productCard = serviceProduct.purchaseProduct(card.card, product.keyName);
         response.status(200).send(productCard);
       }else{
         response.status(404).send({ error: "Produto sem estoque." });
@@ -79,9 +67,6 @@ app.get('/purchase/productId:productId&cardId:cardId', function(request, respons
     }
 });
 
-
-
-//const listener = app.listen(process.env.PORT, function() {
 app.listen(port, function() {
   console.log('A API está rodando na porta: ' + this.address().port);
 });

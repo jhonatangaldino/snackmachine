@@ -10,6 +10,11 @@ const formatDate = function(date) {
     return [year, month, day].join('-');
 }
 
+const replaceAll = function(text, search, replacement) {
+    return text.split(search).join(replacement).trim();
+};
+
 module.exports = {
-  formatDate
+  formatDate,
+  replaceAll
 }
