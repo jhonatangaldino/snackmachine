@@ -1,7 +1,7 @@
 SNACK MACHINE
 ==============
 
-Gerenviamento da [maquina de snack](https://github.com/jhonatangaldino/snackmachine) que são disponibilizadas em grandes empresas.
+Gerenciamento da [maquina de snack](https://github.com/jhonatangaldino/snackmachine) que são disponibilizadas em grandes empresas.
 
 ### Desenvolvimento
 - Aplicação em [NodeJs v11.10.0](https://nodejs.org/dist/v11.10.0/node-v11.10.0-x64.msi)
