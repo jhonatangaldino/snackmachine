@@ -1,7 +1,7 @@
 SNACK MACHINE
 ==============
 
-Exemplo de como foi feito seu desenvolvimento e utilização da [maquina de snack](https://github.com/jhonatangaldino/snackmachine) que são disponibilizadas em grandes empresas.
+Explicação de como foi feito seu desenvolvimento e exemplo de utilização da [maquina de snack](https://github.com/jhonatangaldino/snackmachine).
 
 ### Desenvolvimento
 - Aplicação em [NodeJs v11.10.0](https://nodejs.org/dist/v11.10.0/node-v11.10.0-x64.msi)
