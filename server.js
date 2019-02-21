@@ -1,15 +1,15 @@
 const express         = require('express');
-const bodyParser      = require('body-parser');
+//const bodyParser      = require('body-parser');
 const serviceCard     = require('./services/servicesCard');
 const serviceProduct  = require('./services/servicesProduct');
 
 const app = express();
 const port = 3000;
 
-const valueDaily = 2.5;
+const valueDaily = 15;
 
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({extended:true}));
+//app.use(bodyParser.json());
 
 //CARTÃO
 app.get('/cards/:cardId', function(request, response) {

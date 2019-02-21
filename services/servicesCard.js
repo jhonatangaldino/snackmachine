@@ -1,5 +1,5 @@
 const services = require('./services');
-const cards = require('./cards');
+const cards = require('../data/cards');
 
 const isFirstUse = function(cardId) {
   if(purchasesDay(cardId, new Date())){

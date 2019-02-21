@@ -1,5 +1,5 @@
 const services = require('./services');
-const products = require('./products');
+const products = require('../data/products');
 const cards = require('./servicesCard');
 
 const getProductObject = function (productNameKey) {

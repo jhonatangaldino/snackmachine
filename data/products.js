@@ -1,7 +1,7 @@
 const products = [
   {
-    keyName:"toddypreto",
-    name: "Toddy Preto",
+    keyName:"toddy",
+    name: "Toddy",
     price: 2.5,
     productAmount:5
     },
@@ -12,8 +12,8 @@ const products = [
       productAmount:15
     },
     {
-      keyName:"paodequeijo",
-      name: "Pão de Queijo",
+      keyName:"chocolatelaka",
+      name: "Chocolate Laka",
       price: 3.5,
       productAmount:7
     },
