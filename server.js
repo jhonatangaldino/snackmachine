@@ -42,9 +42,10 @@ app.get('/products/:name', function(request, response){
   }
 });
 
-app.post('/products/purchases/productName:productName&cardId:cardId', function(request, response) {
-    const productName = request.params.productName;
-    const cardId      = request.params.cardId;
+app.post('/products/purchases/', function(request, response) {
+    const productName = request.body.productName;
+    const cardId      = request.body.cardId;
+    console.log(productName, "|", cardId)
     const product     = serviceProduct.getProductObject(productName);
     const card        = serviceCard.returnCard(cardId);
     if (!card) {
