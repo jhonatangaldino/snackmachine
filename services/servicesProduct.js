@@ -9,15 +9,15 @@ const getProductObject = function (productNameKey) {
     })[0];
 }
 
-const purchaseProduct = function(cardId, productId) {
-  const card = cards.returnCard(cardId);
-  const product = getProductObject(productId);
+const purchaseProduct = function(cardId, keyName) {
+  const card    = cards.returnCard(cardId);
+  const product = getProductObject(keyName);
   if(card.valueDay >= product.price && product.productAmount > 0){
     const purchase = product;
     purchase.purchaseDate = services.formatDate(new Date());
     card.purchases.push(purchase);
     cards.debtCard(card.card, product.price);
-    debtProduct(productId);
+    debtProduct(keyName);
     //console.log("Compra no cartão [", card.card ,"] de [", product.price ,"] realizada no dia [", purchase.purchaseDate,"] com sucesso. Saldo Atual:", card.valueDay ,"");
   }else{
     if (product.productAmount <= 0) {
@@ -35,13 +35,14 @@ const listProducts = function(){
   return products;
 }
 
-const debtProduct = function(productId){
-  const product = getProductObject(productId);
+const debtProduct = function(keyName){
+  const product = getProductObject(keyName);
   return product.productAmount -= 1;
 }
 
 module.exports = {
   purchaseProduct,
   getProductObject,
-  listProducts
+  listProducts,
+  debtProduct
 }

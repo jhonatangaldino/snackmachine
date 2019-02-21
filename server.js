@@ -1,5 +1,5 @@
 const express         = require('express');
-//const bodyParser      = require('body-parser');
+const bodyParser      = require('body-parser');
 const serviceCard     = require('./services/servicesCard');
 const serviceProduct  = require('./services/servicesProduct');
 
@@ -8,10 +8,9 @@ const port = 3000;
 
 const valueDaily = 15;
 
-//app.use(bodyParser.urlencoded({extended:true}));
-//app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 
-//CARTÃO
 app.get('/cards/:cardId', function(request, response) {
     const cardId  = request.params.cardId;
     const card    = serviceCard.returnCard(cardId) ;
@@ -22,7 +21,6 @@ app.get('/cards/:cardId', function(request, response) {
     }
 });
 
-// PRODUTOS
 app.get('/products', function(request, response){
   const products = serviceProduct.listProducts();
   if (products) {
@@ -42,11 +40,10 @@ app.get('/products/:name', function(request, response){
   }
 });
 
-app.post('/products/purchases/', function(request, response) {
-    const productName = request.body.productName;
-    const cardId      = request.body.cardId;
-    console.log(productName, "|", cardId)
-    const product     = serviceProduct.getProductObject(productName);
+app.post('/products/purchases', function(request, response) {
+    const keyName     = request.body.keyname;
+    const cardId      = request.body.cardid;
+    const product     = serviceProduct.getProductObject(keyName);
     const card        = serviceCard.returnCard(cardId);
     if (!card) {
       response.status(404).send({ error: "Cartão não localizado." });
