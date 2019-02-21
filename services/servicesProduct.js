@@ -18,7 +18,7 @@ const purchaseProduct = function(cardId, keyName) {
     card.purchases.push(purchase);
     cards.debtCard(card.card, product.price);
     debtProduct(keyName);
-    //console.log("Compra no cartão [", card.card ,"] de [", product.price ,"] realizada no dia [", purchase.purchaseDate,"] com sucesso. Saldo Atual:", card.valueDay ,"");
+    console.log("Compra no cartão [", card.card ,"] de [", product.price ,"] realizada no dia [", purchase.purchaseDate,"] com sucesso. Saldo Atual:", card.valueDay ,"");
   }else{
     if (product.productAmount <= 0) {
       console.log("Não existe mais o product [(",product._id,")", product.productName ,"]. Quantidade:[",product.productAmount,"]!");

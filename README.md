@@ -7,6 +7,7 @@ Gerenciamento da [maquina de snack](https://github.com/jhonatangaldino/snackmach
 - Aplicação em [NodeJs v11.10.0](https://nodejs.org/dist/v11.10.0/node-v11.10.0-x64.msi)
 - Controle de versão efetuado com o [GitHub](http://github.com/)
 - Criação de Rotas foi utilizado o Express
+- Testes unitários utilizando Mocha e Chai
 
 ### Instalação
 
