@@ -19,18 +19,12 @@ Exemplo de como foi feito seu desenvolvimento e utilização da [maquina de snac
 ### Testando a aplicação
 
 1. Abra o Postman ou algum outro API Client.
+  * Para retorno dos dados de um cartão, envie uma requisição do tipo *GET* para o endereço `http://localhost:3000/cards/12345` passando um `'card'`
   * Para retorno de uma lista de produtos envie uma requisição do tipo *GET* para o endereço: `http://localhost:3000/products/`
   * Para retorno de um produto especifico, envie uma requisição do tipo *GET* para o endereço `http://localhost:3000/products/gatoradelaranja` passando uma `'keyName'`
-  * Para efetuar uma venda, envie uma requisição do tipo *POST* para o endereço `http://localhost:3000/products/purchases/`
-
-    ######Parametros:
-
-    productName:toddy
-
-    cardId:12345
+  * Para efetuar uma venda, envie uma requisição no body do tipo *POST* para o endereço `http://localhost:3000/products/purchases/` passando os parametros: productName:`toddy` e cardId:`12345`
 
     * Pode ser alterado o `productName` por um `'keyName'` disponível no *JSON* em `data/products.js`
     * Pode ser alterado o `cardId` por um `'card'` disponível no *JSON* em `data/cards.js`
-  * Para retorno dos dados de um cartão, envie uma requisição do tipo *GET* para o endereço `http://localhost:3000/cards/12345` passando um `'card'`
 
   ###### O valor diário para recarga do cartão estabelecido como default é de *R$15,00* podendo ser alterada no arquivo: `server.js` na variável `valueDaily`

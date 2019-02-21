@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node_modules/mocha/bin/mocha tests/*test.js --reporter spec",
     "start": "nodemon server.js"
   },
   "repository": {
@@ -19,7 +19,9 @@
   "homepage": "https://github.com/jhonatangaldino/snackmachine#readme",
   "devDependencies": {
     "body-parser": "^1.18.3",
+    "chai": "^4.2.0",
     "express": "^4.16.4",
+    "mocha": "^6.0.0",
     "nodemon": "^1.18.10"
   }
 }

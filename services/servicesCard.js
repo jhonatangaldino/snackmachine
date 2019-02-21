@@ -25,6 +25,7 @@ const rechargeCardOnFirstUse = function(cardId, value) {
       console.log("Recarga no cartão [", card.card,"] de [", card.valueDay ,"] foi efetuada!");
       return card;
     }else{
+      return false;
       console.log("Recarga de [", card.valueDay ,"] no cartão [", card.card,"] não efetuada pois não é primeiro uso.");
     }
 };
