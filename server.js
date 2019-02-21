@@ -2,6 +2,7 @@ const express         = require('express');
 const bodyParser      = require('body-parser');
 const serviceCard     = require('./services/servicesCard');
 const serviceProduct  = require('./services/servicesProduct');
+const path              = require('path');
 
 const app = express();
 const port = 3000;
@@ -10,6 +11,10 @@ const valueDaily = 15;
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
+
+app.get('/',function(request, response){
+  response.sendFile(path.join(__dirname+'/views/choices.html'));
+});
 
 app.get('/cards/:cardId', function(request, response) {
     const cardId  = request.params.cardId;
