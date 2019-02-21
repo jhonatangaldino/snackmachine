@@ -13,8 +13,8 @@ describe('Serviços do cartão', function () {
             "purchases":[]
           });
 
-        var abc = servicesCard.rechargeCardOnFirstUse(99999,20);
-        assert.equal(abc.valueDay, 20);
+        var rechargeCardOnFirstUse = servicesCard.rechargeCardOnFirstUse(99999,20);
+        assert.equal(rechargeCardOnFirstUse.valueDay, 20);
     });
 
     it('Cartão Dados', function() {
@@ -26,8 +26,8 @@ describe('Serviços do cartão', function () {
           "purchases":[]
         });
 
-        var abc = servicesCard.returnCard(565462);
-        assert.equal(abc, cards[0]);
+        var card = servicesCard.returnCard(565462);
+        assert.equal(card, cards[0]);
     });
 
     it('Débito Cartão', function() {
@@ -39,8 +39,8 @@ describe('Serviços do cartão', function () {
             "purchases":[]
           });
 
-        var abc = servicesCard.debtCard(75615, 10);
-        assert.equal(abc, 2.5);
+        var debtCard = servicesCard.debtCard(75615, 10);
+        assert.equal(debtCard, 2.5);
     });
 
     it('Compras do dia', function() {
@@ -64,8 +64,8 @@ describe('Serviços do cartão', function () {
             }]
           });
 
-        var abc = servicesCard.purchasesDay(546542, new Date(2019,1,21));
-        assert.equal(abc.purchaseDate, '2019-02-21');
+        var purchaseCard = servicesCard.purchasesDay(546542, new Date(2019,1,21));
+        assert.equal(purchaseCard.purchaseDate, '2019-02-21');
     });
 
     it('Visualização de saldo', function() {
@@ -77,7 +77,7 @@ describe('Serviços do cartão', function () {
             "purchases":[]
           });
 
-        var abc = servicesCard.returnCard(82635);
-        assert.equal(abc.valueDay, 12.5);
+        var showAvailableValue = servicesCard.returnCard(82635);
+        assert.equal(showAvailableValue.valueDay, 12.5);
     });
 });

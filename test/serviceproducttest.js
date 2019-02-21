@@ -15,8 +15,8 @@ describe('Serviços do produtos', function () {
           "purchases":[]
         });
 
-      var test1 = servicesProduct.purchaseProduct(85462, "gatoradelaranja");
-      assert.equal(test1.purchases[0].keyName, "gatoradelaranja");
+      var purchase = servicesProduct.purchaseProduct(85462, "gatoradelaranja");
+      assert.equal(purchase.purchases[0].keyName, "gatoradelaranja");
   });
 
   it('Busca Produto', function() {
@@ -29,8 +29,8 @@ describe('Serviços do produtos', function () {
           "purchaseDate": "2019-02-21"
         });
 
-      var test2 = servicesProduct.getProductObject("pacoca");
-      assert.equal(test2, products[0]);
+      var product = servicesProduct.getProductObject("pacoca");
+      assert.equal(product, products[0]);
   });
 
 });
