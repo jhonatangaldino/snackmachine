@@ -9,6 +9,7 @@ const port = 3000;
 
 const valueDaily = 15;
 
+app.use(express.static('views'));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
