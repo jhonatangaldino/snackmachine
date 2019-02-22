@@ -25,6 +25,7 @@ Teste Visual
 1. Abra o caminho `http://localhost:3000`
   * Para comprar algum produto exposto, basta selecionar o produto
   * Inserir um número de cartão e buscar pelo mesmo.
+  
     Cartões cadastrados: `12345`, `54321`, `56789`, `98765`, `879511`
   * Caso tenha limite diário disponível clique em `Realizar Pagamento`
 
