@@ -13,8 +13,13 @@ const purchaseProduct = function(cardId, keyName) {
   const card    = cards.returnCard(cardId);
   const product = getProductObject(keyName);
   if(card.valueDay >= product.price && product.productAmount > 0){
-    const purchase = product;
-    purchase.purchaseDate = services.formatDate(new Date());
+    const purchase = {
+        keyName: product.keyName,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        purchaseDate: services.formatDate(new Date())
+    };
     card.purchases.push(purchase);
     cards.debtCard(card.card, product.price);
     debtProduct(keyName);

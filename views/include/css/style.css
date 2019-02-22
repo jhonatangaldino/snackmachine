@@ -1,0 +1,15 @@
+.disabled{
+  background:#a2a6ad;
+  opacity:.5;
+  cursor: no-drop;
+}
+.optionProduct{
+  cursor:pointer;
+}
+.showAvailableValue{
+  border:solid 1px gray;
+  border-radius:5px;
+  margin-top:10px;
+  padding:10px;
+  display: none;
+}

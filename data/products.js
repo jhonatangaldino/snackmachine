@@ -31,7 +31,7 @@ const products = [
       keyName:"biscoitooreo",
       name: "Biscoito Oreo",
       price: 1.5,
-      productAmount:12,
+      productAmount:45,
       image:"biscoitooreo.png"
     }
 ];
