@@ -17,7 +17,7 @@ const products = [
       keyName:"chocolatelaka",
       name: "Chocolate Laka",
       price: 3.5,
-      productAmount:7,
+      productAmount:0,
       image:"chocolatelaka.png"
     },
     {

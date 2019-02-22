@@ -7,7 +7,7 @@ const path            = require('path');
 const app = express();
 const port = 3000;
 
-const valueDaily = 15;
+const valueDaily = 20;
 
 app.use(express.static('views'));
 app.use(bodyParser.urlencoded({extended:true}));
@@ -19,6 +19,7 @@ app.get('/',function(request, response){
 
 app.get('/cards/:cardId', function(request, response) {
     const cardId  = request.params.cardId;
+    serviceCard.rechargeCardOnFirstUse(cardId, valueDaily);
     const card    = serviceCard.returnCard(cardId) ;
     if (card) {
       response.status(200).send({card});

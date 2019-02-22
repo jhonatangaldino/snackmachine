@@ -4,7 +4,7 @@ const services = require('../services/services');
 describe('Serviços comuns', function() {
     it('Formatar data em YYYY-MM-DD', function() {
         var dateFormatted = '2019-02-21';
-        var formatDate = services.formatDate(new Date());
+        var formatDate = services.formatDate(new Date(2019,1,21));
 
         assert.equal(formatDate, dateFormatted);
     });

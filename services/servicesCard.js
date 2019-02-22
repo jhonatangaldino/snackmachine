@@ -32,7 +32,7 @@ const rechargeCardOnFirstUse = function(cardId, value) {
 
 const returnCard = function(cardId) {
   return cards.filter(function(item) {
-    return item.card == cardId
+    return item.card == cardId;
   })[0];
 }
 
