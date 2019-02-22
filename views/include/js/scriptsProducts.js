@@ -177,7 +177,7 @@
     }).fail(function(error) {
       var error = JSON.parse(error.responseText);
       $('.showAvailableValue').html(error.error);
-      $('.showAvailableValue').css('background', '#ffc6c6').css('border-color', '#5a9b84').fadeIn();
+      $('.showAvailableValue').css('background', '#ffc6c6').css('border-color', '#f44242').fadeIn();
       setTimeout(function(){
         $('.showAvailableValue').fadeOut();
         getDataCart(form);
