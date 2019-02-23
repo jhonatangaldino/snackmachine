@@ -15,7 +15,7 @@ Gerenciamento da [maquina de snack](https://github.com/jhonatangaldino/snackmach
 
 1. Faça o clone deste projeto com `git clone https://github.com/jhonatangaldino/snackmachine.git`
 2. Entre na pasta do projeto e instale as dependências com `npm install`
-3. Rode a aplicação em algum terminal de comando com o comando `nodemon server.js`
+3. Rode a aplicação em algum terminal de comando com o comando `npm start`
 4. Altere, caso necessário, os dados dos cartões em `data/cards.js`
 5. Altere, caso necessário, os dados dos produtos em `data/products.js`
 
